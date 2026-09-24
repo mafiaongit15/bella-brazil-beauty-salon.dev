@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-script: "Pinyon Script", cursive, serif;
+
+  --color-forest: #0B2118;
+  --color-jungle: #123524;
+  --color-botanical: #1D4A35;
+  --color-moss: #61765A;
+  --color-sage: #9BAA8C;
+  --color-cream: #F2EBDD;
+  --color-sand: #D8CBB5;
+  --color-earth: #8A6C50;
+  --color-charcoal: #171914;
+  --color-brass: #B59A62;
+  --color-gold: #CBB279;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+}
+
+body {
+  background-color: #0B2118;
+  color: #F2EBDD;
+  overflow-x: hidden;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B2118;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1D4A35;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #61765A;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.04); }
+}
+
+.animate-pulseGlow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+/* 120FPS GPU Accelerated Micro-Animations */
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(0, -8px, 0) rotate(1deg);
+  }
+}
+
+.animate-floatGentle {
+  animation: floatGentle 5s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  will-change: transform;
+}
+
+@keyframes floatHummingbird {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate3d(4px, -6px, 0) rotate(3deg);
+  }
+  75% {
+    transform: translate3d(-3px, -3px, 0) rotate(-2deg);
+  }
+}
+
+.animate-hummingbird {
+  animation: floatHummingbird 3.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes swayLeaf {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+.animate-sway {
+  transform-origin: bottom center;
+  animation: swayLeaf 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes shimmerSweep {
+  0% {
+    transform: translate3d(-100%, 0, 0) skewX(-20deg);
+  }
+  100% {
+    transform: translate3d(200%, 0, 0) skewX(-20deg);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmerSweep 3s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  will-change: transform;
+}
+
+/* Smooth GPU accelerated transitions */
+.gpu-smooth {
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform, opacity;
+}
+

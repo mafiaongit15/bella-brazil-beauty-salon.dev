@@ -1,0 +1,6 @@
+{
+  "name": "Bella Brazil Beauty Salon",
+  "description": "Luxury Brazilian-inspired beauty salon in Bahrain with branches in Seef and Saar. Specializing in Brazilian blowout, hair botox, keraorganic treatments, bespoke color, nails, and bridal beauty.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
